@@ -2,6 +2,7 @@ package com.jivatech.replacehost.controller;
 
 import com.jivatech.replacehost.repository.entity.Customer;
 import com.jivatech.replacehost.repository.entity.Table;
+import com.jivatech.replacehost.service.CustomerService;
 import com.jivatech.replacehost.service.TableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,10 @@ public class TableController {
     @Autowired
     TableService tableService;
 
-    @RequestMapping(value = "/table/{tableNumber}"), method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @Autowired
+    CustomerService customerService;
+
+    @RequestMapping(value = "/table/{tableNumber}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Table> getTable(@PathVariable(value = "tableNumber", required = true) String tableNumber) {
         return new ResponseEntity<>(tableService.getTable(tableNumber), HttpStatus.OK);
     }

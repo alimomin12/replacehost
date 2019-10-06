@@ -11,5 +11,7 @@ public class TableService {
     @Autowired
     TableRepository tableRepository;
 
-    public Table getTable()
+    public Table getTable(String tableNumber) {
+        return null;
+    }
 }
