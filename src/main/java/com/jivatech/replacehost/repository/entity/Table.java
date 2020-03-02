@@ -8,6 +8,7 @@ public class Table {
     private Integer tableNumber;
     private Integer tableSize;
     private String tableLocation;
-    private String tableStatus;
+    private Boolean isAvailable;
+
 
 }
