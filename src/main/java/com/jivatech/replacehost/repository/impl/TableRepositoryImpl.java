@@ -1,5 +1,5 @@
 package com.jivatech.replacehost.repository.impl;
-
+import org.springframework.stereotype.Repository;
 import com.jivatech.replacehost.repository.TableRepository;
 import com.jivatech.replacehost.repository.entity.Table;
 import org.springframework.stereotype.Repository;
@@ -49,9 +49,10 @@ public class TableRepositoryImpl implements TableRepository {
     @Override
     public void changeTableAvailability(Integer tableNumber, Boolean newAvailability) {
         for (Table table : tables) {
-            if(java.util.Objects.equals(table.getTableNumber(), tableNumber)) {
+            if (java.util.Objects.equals(table.getTableNumber(), tableNumber)) {
                 table.setIsAvailable(newAvailability);
             }
         }
     }
 }
+

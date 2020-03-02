@@ -11,9 +11,5 @@ public class TableService {
     @Autowired
     TableRepository tableRepository;
 
-    public Table getTable(Integer tableSize) {
-        return tableRepository.findTable(true, tableSize);
-
-    }
-
+    public Table getTable()
 }
